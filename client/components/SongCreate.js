@@ -1,8 +1,8 @@
 //--------------------------------------- Global Imports --
 import gql from 'graphql-tag'
-import { Link } from 'react-router'
 import { graphql } from 'react-apollo'
 import React, { Component } from 'react'
+import { Link, hashHistory } from 'react-router'
 
 //-------------------------------------------- Mutations --
 const mutation = gql`
@@ -23,14 +23,18 @@ class SongCreate extends Component {
 
   }
 
-  onSubmit (event) {
+  async onSubmit (event) {
     event.preventDefault()
 
-    this.props.mutate({
-      variables: {
-        title: this.state.title,
-      }
-    })
+    try {
+      await this.props.mutate({
+        variables: {
+          title: this.state.title,
+        }
+      })
+
+      hashHistory.push('/')
+    } catch (error) {}
   }
 
   render() {
