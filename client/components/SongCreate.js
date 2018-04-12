@@ -3,6 +3,8 @@ import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 import React, { Component } from 'react'
 import { Link, hashHistory } from 'react-router'
+import { fetchSongs } from '../queries/queries'
+
 
 //-------------------------------------------- Mutations --
 const mutation = gql`
