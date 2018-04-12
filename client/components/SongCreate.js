@@ -1,7 +1,8 @@
 //--------------------------------------- Global Imports --
-import React, { Component } from 'react'
-import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+import { Link } from 'react-router'
+import { graphql } from 'react-apollo'
+import React, { Component } from 'react'
 
 //-------------------------------------------- Mutations --
 const mutation = gql`
@@ -10,7 +11,7 @@ const mutation = gql`
       title
     }
   }
-`;
+`
 
 
 //--------------------------------- SongCreate Component --
@@ -35,6 +36,7 @@ class SongCreate extends Component {
   render() {
     return (
       <div>
+        <Link to="/">Back</Link>
         <h3>Create a New Song</h3>
         <form onSubmit={e => this.onSubmit(e)}>
           <label>Song Title:</label>
