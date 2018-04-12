@@ -12,10 +12,22 @@ import { deleteSong } from '../queries/mutations'
 
 //----------------------------------- SongList Component --
 class SongList extends Component {
+  async onSongDelete (id) {
+    await this.props.mutate({ variables: { id } })
+
+    this.props.data.refetch()
+  }
+
   renderSongs () {
     return this.props.data.songs.map(({ id, title }) => {
       return <li key={id} className="collection-item">
-        {title}
+          {title}
+          <i
+            className="material-icons"
+            onClick={() => this.onSongDelete(id)}
+          >
+            delete
+          </i>
         </li>
     })
   }

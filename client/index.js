@@ -1,5 +1,6 @@
 //--------------------------------------- Global Imports --
 import 'babel-polyfill'
+import './style/style.css'
 import React from 'react'
 import { render } from 'react-dom'
 import ApolloClient from 'apollo-client'
