@@ -9,6 +9,7 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 //------------------------------------ Component Imports --
 import App from './components/App'
 import SongList from './components/SongList'
+import SongCreate from './components/SongCreate'
 
 
 //------------------------------------- Global Variables --
@@ -22,6 +23,7 @@ function Root ()  {
       <Router history={hashHistory}>
         <Route path='/' component={App}>
           <IndexRoute component={SongList} />
+          <Route path='song/new' component={SongCreate} />
         </Route>
       </Router>
     </ApolloProvider>
