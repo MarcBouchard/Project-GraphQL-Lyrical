@@ -1,8 +1,8 @@
 //--------------------------------------- Global Imports --
-import React, { Component } from 'react'
 import gql from 'graphql-tag'
+import { Link } from 'react-router'
 import { graphql } from 'react-apollo'
-
+import React, { Component } from 'react'
 
 //------------------------------------------------ Query --
 const query = gql`{
@@ -28,9 +28,17 @@ class SongList extends Component {
     if (this.props.data.loading) return <div>Loading...</div>
 
     return (
-      <ul className="collection">
-        {this.renderSongs()}
-      </ul>
+      <div>
+        <ul className="collection">
+          {this.renderSongs()}
+        </ul>
+        <Link
+          to="/songs/new"
+          className="btn-floating btn-large red right"
+        >
+          <i className="material-icons">add</i>
+        </Link>
+      </div>
     )
   }
 }
