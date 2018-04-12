@@ -5,6 +5,10 @@ import ApolloClient from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
 
 
+//------------------------------------ Component Imports --
+import SongList from './components/SongList'
+
+
 //------------------------------------- Global Variables --
 const client = new ApolloClient({})
 
@@ -13,7 +17,7 @@ const client = new ApolloClient({})
 function Root ()  {
   return (
     <ApolloProvider client={client}>
-      <div>Lyrical</div>
+      <SongList />
     </ApolloProvider>
 
   )
