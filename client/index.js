@@ -1,4 +1,5 @@
 //--------------------------------------- Global Imports --
+import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'
 import ApolloClient from 'apollo-client'
