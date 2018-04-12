@@ -1,11 +1,27 @@
+//--------------------------------------- Global Imports --
 import React from 'react'
 import { render } from 'react-dom'
+import ApolloClient from 'apollo-client'
+import { ApolloProvider } from 'react-apollo'
 
-const Root = () => {
-	return <div>Hello</div>
+
+//------------------------------------- Global Variables --
+const client = new ApolloClient({})
+
+
+//--------------------------------------- Root Component --
+function Root ()  {
+  return (
+    <ApolloProvider client={client}>
+      <div>Lyrical</div>
+    </ApolloProvider>
+
+  )
 }
 
-render(
+
+//-------------------------------------------- RenderDOM --
+render (
 	<Root />,
 	document.querySelector('#root')
 )
